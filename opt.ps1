@@ -1,33 +1,33 @@
-# Åã¥Ü¿ï¾Üµæ³æ
-Write-Host "½Ğ¿ï¾Ü¤@­Ó¥\¯à:"
-Write-Host "1. Åã¥Ü¥»¾÷ªº IP ¦a§}"
+# é¡¯ç¤ºé¸æ“‡èœå–®
+Write-Host "è«‹é¸æ“‡ä¸€å€‹åŠŸèƒ½:"
+Write-Host "1. é¡¯ç¤ºæœ¬æ©Ÿçš„ IP åœ°å€"
 Write-Host "2. Ping Google DNS 8.8.8.8"
 
-# Åı¨Ï¥ÎªÌ¿ï¾Ü¥\¯à
-$choice = Read-Host "½Ğ¿é¤J¿ï¶µ (1 ©Î 2)"
+# è®“ä½¿ç”¨è€…é¸æ“‡åŠŸèƒ½
+$choice = Read-Host "è«‹è¼¸å…¥é¸é … (1 æˆ– 2)"
 
-# ®Ú¾Ú¨Ï¥ÎªÌ¿ï¾Ü°õ¦æ¬ÛÀ³ªº¥\¯à
+# æ ¹æ“šä½¿ç”¨è€…é¸æ“‡åŸ·è¡Œç›¸æ‡‰çš„åŠŸèƒ½
 if ($choice -eq "1") {
-    # ¥\¯à 1: Åã¥Ü¥»¾÷ªº IP ¦a§}
-    Write-Host "Åã¥Ü¥»¾÷ªº IP ¦a§}:"
-    $ipConfig = ipconfig | Select-String "IPv4"  # ¿z¿ï¥X¥]§t IPv4 ¦a§}ªº¦æ
+    # åŠŸèƒ½ 1: é¡¯ç¤ºæœ¬æ©Ÿçš„ IP åœ°å€
+    Write-Host "é¡¯ç¤ºæœ¬æ©Ÿçš„ IP åœ°å€:"
+    $ipConfig = ipconfig | Select-String "IPv4"  # ç¯©é¸å‡ºåŒ…å« IPv4 åœ°å€çš„è¡Œ
     if ($ipConfig) {
         $ipConfig
     } else {
-        Write-Host "µLªk§ä¨ì IP ¦a§}¡C"
+        Write-Host "ç„¡æ³•æ‰¾åˆ° IP åœ°å€ã€‚"
     }
 } elseif ($choice -eq "2") {
-    # ¥\¯à 2: Ping Google DNS¡]8.8.8.8¡^
+    # åŠŸèƒ½ 2: Ping Google DNSï¼ˆ8.8.8.8ï¼‰
     Write-Host "`nPing Google DNS 8.8.8.8:"
     $pingResult = Test-Connection -ComputerName 8.8.8.8 -Count 4 -WarningAction SilentlyContinue
     if ($pingResult) {
         $pingResult
     } else {
-        Write-Host "Ping ¥¢±Ñ¡AµLªk³s±µ¨ì 8.8.8.8¡C"
+        Write-Host "Ping å¤±æ•—ï¼Œç„¡æ³•é€£æ¥åˆ° 8.8.8.8ã€‚"
     }
-} else{ Write-Host "µL®Äªº¿ï¶µ¡A½Ğ¿é¤J 1 ©Î 2¡C" }
+} else{ Write-Host "ç„¡æ•ˆçš„é¸é …ï¼Œè«‹è¼¸å…¥ 1 æˆ– 2ã€‚" }
     
 
 
-# «O«ù±±¨î¥x¶}±Ò¡AÅı¨Ï¥ÎªÌ¬İ¨ìµ²ªG
-Read-Host "«ö Enter Áä°h¥X"
+# ä¿æŒæ§åˆ¶å°é–‹å•Ÿï¼Œè®“ä½¿ç”¨è€…çœ‹åˆ°çµæœ
+Read-Host "æŒ‰ Enter éµé€€å‡º"
