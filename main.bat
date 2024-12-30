@@ -2,37 +2,37 @@
 :menu
 cls
 echo ==================================
-echo          BAT 工具選單
+echo          BAT �u����
 echo ==================================
-echo [1] 顯示本機 IP 位址
+echo [1] ��ܥ��� IP ��}
 echo [2] Ping Google DNS (8.8.8.8)
-echo [3] 退出
+echo [3] �h�X
 echo ==================================
-set /p choice=請輸入選項（1-3）： 
+set /p choice=�п�J�ﶵ�]1-3�^�G 
 
 if "%choice%"=="1" goto show_ip
 if "%choice%"=="2" goto ping_google
 if "%choice%"=="3" goto exit
-echo 無效的選項，請重新輸入！
+echo �L�Ī��ﶵ�A�Э��s��J�I
 pause
 goto menu
 
 :show_ip
 cls
-echo 你的本機 IP 位址如下：
+echo �A������ IP ��}�p�U�G
 ipconfig | findstr "IPv4"
 pause
 goto menu
 
 :ping_google
 cls
-echo 正在 Ping Google DNS (8.8.8.8)...
+echo ���b Ping Google DNS (8.8.8.8)...
 ping 8.8.8.8
 pause
 goto menu
 
 :exit
 cls
-echo 感謝使用本工具！再見！
+echo �P�¨ϥΥ��u��I�A���I
 pause
 exit
