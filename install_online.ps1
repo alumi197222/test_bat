@@ -68,7 +68,7 @@ else {
   $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
   if (Test-Path -Path $extractedFolderPath) {
     Write-Host "正在將解壓的資料夾移動到目標路徑..." -ForegroundColor Green
-    Copy-Item -Path "$extractedFolderPath\*" -Destination "C:\" -Recurse -Force
+    Copy-Item -Path "$extractedFolderPath\*" -Destination $targetFolderPath -Recurse -Force
     Write-Host "資料夾已成功移動到 $targetFolderPath" -ForegroundColor Green
   }
   else {
